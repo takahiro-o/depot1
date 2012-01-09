@@ -10,6 +10,12 @@
     border-bottom: 3px dotted #77d;
   }
   
+  #counter {
+    position: relative;
+    top: -30px;
+    text-align: right;
+  }
+  
   /* ストアカタログ内のエントリ */
  .entry {
    overflow: auto;
@@ -43,6 +49,10 @@
      color: #44a;
      font-weight: bold;
      margin-right: 3em;
+   }
+   
+   form, div {
+     display: inline;
    }
  }
 }

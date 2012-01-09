@@ -4,6 +4,12 @@
 
 <h1>Pragmaticカタログ</h1>
 
+<div id="counter">
+<% if @counter > 5 %>
+アクセス回数：<%= @counter %>
+<% end %>
+</div>
+
 <% @products.each do |product| %>
 	<div class="entry">
 		<%= image_tag(product.image_url) %>
@@ -11,6 +17,7 @@
 		<%= sanitize(product.description) %>
 		<div class="price_line">
 			<span class="price"><%= number_to_currency(product.price, unit: '円', format: '%n%u') %></span>
+			<%= button_to 'カートに入れる', line_items_path(product_id: product) %>
 		</div>
 	</div>
 <% end %>
